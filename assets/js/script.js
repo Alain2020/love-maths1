@@ -10,16 +10,18 @@ document.addEventListener("DOMContentLoaded", function(){
                 checkAnswer();
             } else {
                 let gameType = this.getAttribute("data-type");
-                alert('You clicked ${gametype}');
+                runGame(gameType);
             }
         })
     }
+
+        runGame("addition");
 })
 /**
  * The main game "loop", called when the script is first loaded
  * and after the user's answer has been processed
  */
-function runGame() {
+function runGame(gameType) {
      // Creates two random numbers between 1 and 25
      let num1 = Math.floor(Math.random() * 25) + 1;
      let num2 = Math.floor(Math.random() * 25) + 1;
@@ -44,9 +46,9 @@ function checkAnswer() {
     let isCorrect = userAnswer === calculateCorrectAnswer[0];
 
     if (isCorrect) {
-        alert("Hey! You got it right :D"),
+        alert("Hey! You got it right :D");
     } else {
-        alert(Awwwww ...arguments.you answered $(userAnswer). the correct answer was $(calculateCorrectAnswer[0]!);
+        alert('Awwwww ....arguments.you answered $(userAnswer). the correct answer was $(calculateCorrectAnswer[0]!');
     }
 
     runGame(calculateCorrectAnswer[1]);
