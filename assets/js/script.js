@@ -42,16 +42,16 @@ function runGame(gameType) {
 function checkAnswer() {
 
     let userAnswer =parseInt(document.getElementById("answer-box").value);
-    let calculateCorrectAnswer = calculateCorrectAnswer();
-    let isCorrect = userAnswer === calculateCorrectAnswer[0];
+    let calculatedCorrectAnswer = calculateCorrectAnswer();
+    let isCorrect = userAnswer === calculatedAnswer[0];
 
     if (isCorrect) {
         alert("Hey! You got it right :D");
     } else {
-        alert('Awwwww ....arguments.you answered $(userAnswer). the correct answer was $(calculateCorrectAnswer[0]!');
+        alert('Awwwww ....arguments.you answered $(userAnswer). the correct answer was $(calculatedAnswer[0]!');
     }
 
-    runGame(calculateCorrectAnswer[1]);
+    runGame(calculatedAnswer[1]);
 
 }
 
@@ -65,6 +65,13 @@ function calculateCorrectAnswer() {
     let operand1 = parseInt(document.getElementById('operand1').innerText);
     let operand2 = parseInt(document.getElementById('operand2').innerText);
     let operator = document.getElementById('operator').innerText;
+
+    if (operator === "+") {
+        return [operand1 + operand2, "addition"];
+    } else {
+        alert('Unimplemented operator ${operator}');
+        throw 'Unimplemented operator ${operator}. Aborting!';
+    }
      
 }
 
